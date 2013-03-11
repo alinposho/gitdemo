@@ -31,7 +31,6 @@ public class IterativeRevertingList<T> extends LinkedList<T> {
         last = first;
         first = previous;
 
-
         return this;
     }
 }

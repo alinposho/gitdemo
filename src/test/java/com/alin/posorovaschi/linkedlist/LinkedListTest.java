@@ -8,13 +8,15 @@ public abstract class LinkedListTest {
 
     private LinkedList<Integer> cut;
 
-    public abstract LinkedList<Integer> instantiateList(Node<Integer> first);
+    protected abstract LinkedList<Integer> initializeEmptyList();
 
     @Test
     public void reverse_should_not_raise_an_exception_for_an_empty_list() {
 
+        // Prepare
         cut = initializeEmptyList();
 
+        // Preconditions checks
         assertTrue(cut.isEmpty());
 
         // Exercise
@@ -25,7 +27,7 @@ public abstract class LinkedListTest {
 
     }
 
-    protected abstract LinkedList<Integer> initializeEmptyList();
+    public abstract LinkedList<Integer> instantiateList(Node<Integer> first);
 
     @Test
     public void reverse_should_not_raise_an_exception_for_a_one_element_list() {
@@ -33,6 +35,7 @@ public abstract class LinkedListTest {
         // Prepare
         cut = instantiateList(new Node<Integer>(18728, null));
 
+        // Precondition checks
         assertFalse(cut.isEmpty());
         assertNull(cut.getFirst().getNext());
 
