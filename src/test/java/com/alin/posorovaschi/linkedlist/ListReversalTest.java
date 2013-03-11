@@ -1,49 +1,54 @@
 package com.alin.posorovaschi.linkedlist;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public abstract class LinkedListTest {
+public abstract class ListReversalTest {
 
-    private LinkedList<Integer> cut;
+    protected ListReversal cut;
+    private LinkedList list;
 
-    protected abstract LinkedList<Integer> initializeEmptyList();
+    @Before
+    public abstract void setUp();
 
     @Test
     public void reverse_should_not_raise_an_exception_for_an_empty_list() {
 
         // Prepare
-        cut = initializeEmptyList();
+        list = initializeEmptyList();
 
         // Preconditions checks
-        assertTrue(cut.isEmpty());
+        assertTrue(list.isEmpty());
 
         // Exercise
-        LinkedList<Integer> resultList = cut.reverse();
+        LinkedList<Integer> resultList = cut.reverse(list);
 
         // Verify
-        assertEquals(cut, resultList);
+        assertEquals(list, resultList);
 
     }
 
-    public abstract LinkedList<Integer> instantiateList(Node<Integer> first);
+    private LinkedList<Integer> initializeEmptyList() {
+        return new LinkedList<Integer>();
+    }
 
     @Test
     public void reverse_should_not_raise_an_exception_for_a_one_element_list() {
 
         // Prepare
-        cut = instantiateList(new Node<Integer>(18728, null));
+        list = instantiateList(new Node<Integer>(18728, null));
 
         // Precondition checks
-        assertFalse(cut.isEmpty());
-        assertNull(cut.getFirst().getNext());
+        assertFalse(list.isEmpty());
+        assertNull(list.getHead().getNext());
 
         // Exercise
-        LinkedList<Integer> resultList = cut.reverse();
+        LinkedList<Integer> resultList = cut.reverse(list);
 
         // Verify
-        assertEquals(cut, resultList);
+        assertEquals(list, resultList);
 
     }
 
@@ -57,20 +62,19 @@ public abstract class LinkedListTest {
         int firstElementValue = 172671;
         Node<Integer> first = new Node<Integer>(firstElementValue, second);
 
-        cut = instantiateList(first);
+        list = instantiateList(first);
 
         // Precondition checks
-        assertFalse(cut.isEmpty());
-        assertNotNull(cut.getFirst().getNext());
+        assertFalse(list.isEmpty());
+        assertNotNull(list.getHead().getNext());
 
         // Exercise
-        LinkedList<Integer> resultList = cut.reverse();
+        LinkedList<Integer> resultList = cut.reverse(list);
 
         // Verify
-        assertEquals(cut, resultList);
-        assertTrue(cut.getFirst().getNext().equals(cut.getLast()));
-        assertEquals(secondElementValue, cut.getFirst().getValue().intValue());
-        assertEquals(firstElementValue, cut.getLast().getValue().intValue());
+        assertEquals(list, resultList);
+        assertEquals(secondElementValue, list.getHead().getValue());
+        assertEquals(firstElementValue, list.getHead().getNext().getValue());
 
     }
 
@@ -79,18 +83,21 @@ public abstract class LinkedListTest {
 
         // Prepare
         Node<Integer> first = generateList(8);
-        cut = instantiateList(first);
+        list = instantiateList(first);
 
         // Precondition checks
         assertIntegerElementsInDescendingOrder(first);
 
         // Exercise
-        LinkedList<Integer> resultList = cut.reverse();
+        LinkedList<Integer> resultList = cut.reverse(list);
 
         // Verify
-        assertEquals(cut, resultList);
-        assertEquals(first, cut.getLast());
-        assertIntegerElementsInAscendingOrder(resultList.getFirst());
+        assertEquals(list, resultList);
+        assertIntegerElementsInAscendingOrder(resultList.getHead());
+    }
+
+    private LinkedList<Integer> instantiateList(Node<Integer> first) {
+        return new LinkedList<Integer>(first);
     }
 
     private void assertIntegerElementsInAscendingOrder(Node<Integer> element) {

@@ -1,44 +1,30 @@
 package com.alin.posorovaschi.linkedlist;
 
 /**
- * This is the container for the Linked List that implements reversing operations
+ * This is the container for the Linked List.
  */
-public abstract class LinkedList<T> {
+public class LinkedList<T> {
 
-    protected Node<T> first;
-    protected Node<T> last;
+    protected Node<T> head;
 
     protected LinkedList() {
         this(null);
     }
 
-    public LinkedList(Node<T> first) {
-        this.first = first;
-        if (first == null) {
-            last = null;
-        } else {
-            Node<T> temp = first;
-            while (temp.getNext() != null) {
-                temp = temp.getNext();
-            }
-
-            last = temp;
-        }
-
+    public LinkedList(Node<T> head) {
+        this.head = head;
     }
-
-    public abstract LinkedList<T> reverse();
 
     public boolean isEmpty() {
-        return first == null;
+        return head == null;
     }
 
-    public Node<T> getFirst() {
-        return first;
+    public Node<T> getHead() {
+        return head;
     }
 
-    public Node<T> getLast() {
-        return last;
+    public void setHead(Node<T> head) {
+        this.head = head;
     }
 
     @Override
@@ -49,9 +35,9 @@ public abstract class LinkedList<T> {
         }
 
         StringBuffer buf = new StringBuffer("[");
-        buf.append(first.getValue());
+        buf.append(head.getValue());
 
-        Node<T> temp = first.getNext();
+        Node<T> temp = head.getNext();
         while (temp != null) {
             buf.append(", ");
             buf.append(temp.getValue());
@@ -62,4 +48,5 @@ public abstract class LinkedList<T> {
 
         return buf.toString();
     }
+
 }
