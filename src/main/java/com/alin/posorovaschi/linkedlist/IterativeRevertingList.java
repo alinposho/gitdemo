@@ -15,22 +15,21 @@ public class IterativeRevertingList<T> extends LinkedList<T> {
 
         if (isEmpty()) {
             return this;
-        } else if (first.getNext() == null) {
-            return this;
         }
 
         Node<T> previous = first;
         Node<T> current = first.getNext();
         first.setNext(null);
 
-        while (current.getNext() != null) {
-            previous = current;
-            current = current.getNext();
+        while (current != null) {
+            Node<T> temp = current.getNext();
             current.setNext(previous);
+            previous = current;
+            current = temp;
         }
 
         last = first;
-        first = current;
+        first = previous;
 
 
         return this;

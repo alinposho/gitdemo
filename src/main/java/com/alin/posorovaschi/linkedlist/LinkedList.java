@@ -55,6 +55,7 @@ public abstract class LinkedList<T> {
         while (temp != null) {
             buf.append(", ");
             buf.append(temp.getValue());
+            temp = temp.getNext();
         }
 
         buf.append("]");
