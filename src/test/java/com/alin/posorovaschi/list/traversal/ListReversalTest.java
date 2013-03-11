@@ -1,5 +1,8 @@
-package com.alin.posorovaschi.linkedlist;
+package com.alin.posorovaschi.list.traversal;
 
+import com.alin.posorovaschi.list.LinkedList;
+import com.alin.posorovaschi.list.Node;
+import com.alin.posorovaschi.list.traversal.ListReversal;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -53,7 +56,7 @@ public abstract class ListReversalTest {
     }
 
     @Test
-    public void reverse_should_reverse_position_of_the_two_elements_in_the_list() {
+    public void reverse_should_reverse_positions_of_the_two_elements_in_the_list() {
 
         // Prepare
         int secondElementValue = 167;
@@ -79,7 +82,7 @@ public abstract class ListReversalTest {
     }
 
     @Test
-    public void reverse_should_reverse_position_of_the_all_the_elements_in_the_list() {
+    public void reverse_should_reverse_all_the_elements_in_the_list() {
 
         // Prepare
         Node<Integer> first = generateList(8);

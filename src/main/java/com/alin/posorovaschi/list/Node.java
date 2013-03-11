@@ -1,4 +1,4 @@
-package com.alin.posorovaschi.linkedlist;
+package com.alin.posorovaschi.list;
 
 /**
  * This is the Linked List element - a node in the list.

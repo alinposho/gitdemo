@@ -1,4 +1,4 @@
-package com.alin.posorovaschi.linkedlist;
+package com.alin.posorovaschi.list;
 
 /**
  * This is the container for the Linked List.
@@ -7,7 +7,7 @@ public class LinkedList<T> {
 
     protected Node<T> head;
 
-    protected LinkedList() {
+    public LinkedList() {
         this(null);
     }
 

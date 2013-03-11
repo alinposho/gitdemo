@@ -1,4 +1,4 @@
-package com.alin.posorovaschi.linkedlist;
+package com.alin.posorovaschi.list.traversal;
 
 public class IterativeListReversalTest extends ListReversalTest {
 

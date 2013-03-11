@@ -1,4 +1,6 @@
-package com.alin.posorovaschi.linkedlist;
+package com.alin.posorovaschi.list.traversal;
+
+import com.alin.posorovaschi.list.LinkedList;
 
 /**
  * Defines the operations for reversing a linked list.

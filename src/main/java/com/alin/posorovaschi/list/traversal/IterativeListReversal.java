@@ -1,6 +1,10 @@
-package com.alin.posorovaschi.linkedlist;
+package com.alin.posorovaschi.list.traversal;
 
-public class IterativeListReversal implements ListReversal{
+import com.alin.posorovaschi.list.LinkedList;
+import com.alin.posorovaschi.list.Node;
+import com.alin.posorovaschi.list.traversal.ListReversal;
+
+public class IterativeListReversal implements ListReversal {
 
     @Override
     public <T> LinkedList<T> reverse(LinkedList<T> list) {
