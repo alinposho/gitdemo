@@ -75,7 +75,6 @@ public abstract class ListReversalTest {
 
         // Verify
         assertEquals(list, resultList);
-        assertEquals(list, resultList);
         assertEquals(secondElementValue, list.getHead().getValue());
         assertEquals(firstElementValue, list.getHead().getNext().getValue());
 
