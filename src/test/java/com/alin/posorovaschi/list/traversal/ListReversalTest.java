@@ -19,7 +19,6 @@ public abstract class ListReversalTest {
     // Add some line
     @Test
     public void reverse_should_not_raise_an_exception_for_an_empty_list() {
-
         // Prepare
         list = initializeEmptyList();
 
