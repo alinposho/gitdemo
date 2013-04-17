@@ -92,7 +92,7 @@ public abstract class ListReversalTest {
         LinkedList<Integer> resultList = cut.reverse(list);
 
         // Verify
-        assertEquals(list, resultList);
+        assertEquals(null, resultList);
         assertIntegerElementsInAscendingOrder(resultList.getHead());
     }
 
