@@ -19,7 +19,6 @@ public abstract class ListReversalTest {
     //THis line has changes in rebase_conflict1
     @Test
     public void reverse_should_not_raise_an_exception_for_an_empty_list() {
-
         // Prepare
         list = initializeEmptyList();
 
