@@ -4,6 +4,6 @@ public class RecursiveListReversalTest extends ListReversalTest {
 
     @Override
     public void setUp() {
-        cut = new RecursiveListReversal();
+        cut = null;
     }
 }
