@@ -108,13 +108,6 @@ public abstract class ListReversalTest {
         }
     }
 
-    private void assertIntegerElementsInDescendingOrder(Node<Integer> element) {
-        while (element.getNext() != null) {
-            assertTrue(element.getValue() > element.getNext().getValue());
-            element = element.getNext();
-        }
-    }
-
     private Node<Integer> generateList(int noOfElementInList) {
         Node<Integer> element;
         Node<Integer> previous = new Node<Integer>(0, null);
@@ -127,4 +120,12 @@ public abstract class ListReversalTest {
         return previous;
 
     }
+
+    private void assertIntegerElementsInDescendingOrder(Node<Integer> element) {
+        while (element.getNext() != null) {
+            assertTrue(element.getValue() > element.getNext().getValue());
+            element = element.getNext();
+        }
+    }
+
 }
