@@ -39,7 +39,6 @@ public abstract class ListReversalTest {
 
     @Test
     public void reverse_should_not_raise_an_exception_for_a_one_element_list() {
-
         // Prepare
         list = instantiateList(new Node<Integer>(18728, null));
 
@@ -57,7 +56,6 @@ public abstract class ListReversalTest {
 
     @Test
     public void reverse_should_reverse_positions_of_the_two_elements_in_the_list() {
-
         // Prepare
         int secondElementValue = 167;
         Node<Integer> second = new Node<Integer>(secondElementValue, null);
@@ -83,7 +81,6 @@ public abstract class ListReversalTest {
 
     @Test
     public void reverse_should_reverse_all_the_elements_in_the_list() {
-
         // Prepare
         Node<Integer> first = generateList(8);
         list = instantiateList(first);
