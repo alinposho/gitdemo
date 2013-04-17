@@ -37,6 +37,10 @@ public abstract class ListReversalTest {
         return new LinkedList<Integer>();
     }
 
+    private LinkedList<Integer> instantiateList(Node<Integer> first) {
+        return new LinkedList<Integer>(first);
+    }
+
     @Test
     public void reverse_should_not_raise_an_exception_for_a_one_element_list() {
         // Prepare
@@ -94,10 +98,6 @@ public abstract class ListReversalTest {
         // Verify
         assertEquals(list, resultList);
         assertIntegerElementsInAscendingOrder(resultList.getHead());
-    }
-
-    private LinkedList<Integer> instantiateList(Node<Integer> first) {
-        return new LinkedList<Integer>(first);
     }
 
     private void assertIntegerElementsInAscendingOrder(Node<Integer> element) {
