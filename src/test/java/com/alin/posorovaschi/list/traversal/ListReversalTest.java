@@ -22,10 +22,8 @@ public abstract class ListReversalTest {
         // Prepare
         list = initializeEmptyList();
 
-        // Preconditions checks
         assertTrue(list.isEmpty());
 
-        // Exercise
         LinkedList<Integer> resultList = cut.reverse(list);
 
         // Verify
